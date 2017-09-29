@@ -66,6 +66,7 @@
       }
     }
     
+    if (v > -1) ret += String.fromCharCode ((b | v << n) & 0xff);
     return (ret);
   };
 
