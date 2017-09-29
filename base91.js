@@ -12,7 +12,7 @@
     var n = 0, b = 0;
 
     for (var i = 0; i < len; ++i) {
-      b |= data.charCodeAt(i) << n;
+      b |= data.charCodeAt (i) << n;
       n += 8;
 
       if (n > 13) {
@@ -31,8 +31,8 @@
     }
 
     if (n) {
-      ret += set[b % 91];
-      if (n > 7 || b > 90) ret += set[b / 91 | 0];
+      ret += set[ b % 91 ];
+      if (n > 7 || b > 90) ret += set[ b / 91 | 0 ];
     }
 
     return (ret);
@@ -47,7 +47,7 @@
     var b = 0, n = 0, v = -1;
 
     for (var i = 0; i < len; ++i) {
-      var p = set.indexOf(data[i]);
+      var p = set.indexOf (data[i]);
 
       if (p === -1) continue;
 
@@ -68,13 +68,12 @@
     
     return (ret);
   };
-  
 
   w.base91 = {
     encode: E,
     decode: D
   };
-  // freezing it
-  if (Object.freeze) Object.freeze(w.base91);
+
+  if (Object.freeze) Object.freeze (w.base91);
 
 })( window ); // <-- your object here
